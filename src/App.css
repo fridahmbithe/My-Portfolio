@@ -104,7 +104,9 @@ nav.navbar .navbar-nav .nav-link.navbar-link {
 }
 nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
 nav.navbar .navbar-nav a.nav-link.navbar-link.active {
-    opacity: 1;
+    /* opacity: 1; */
+    color: #8ceb17 !important;
+
 }
 span.navbar-text {
     display: flex;
@@ -463,9 +465,9 @@ padding: auto;
 }
 .proj-imgbx {
   position: relative;
-  border-radius: 30px;
+  border-radius: 10px;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 4px;
 }
 .proj-imgbx::before {
   content: "";

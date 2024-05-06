@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/profile.png";
-import { ArrowRightCircle } from "react-bootstrap-icons";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
+import LazyLoad from 'react-lazyload';
+
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -50,6 +51,11 @@ export const Banner = () => {
       setIndex((prevIndex) => prevIndex + 1);
     }
   };
+  //const { headerImg } = this.props;
+
+  const handleClick = () => {
+    window.location.href = 'tel:+254112579157';
+  };
 
   return (
     <section className="banner" id="home">
@@ -66,13 +72,13 @@ export const Banner = () => {
                   <span className="tagline">
                     Hi, My name is Fridah Mbithe.{" "}
                   </span>
-                  <h3>{`A Front-end Web Developer & Web Designer`}</h3>
+                  <h3>{`A Full stack Web Developer `}</h3>
                   <p>
-                    I am a creative and detail oriented full stack developer & a UI/UX designer with an
+                    I am a creative and detail oriented full stack web developer with an
                     ability to create intuitive and innovative designs, and
                     also, translate the designs to a fully responsive Website.
                   </p>
-                  <button className="button">Schedule a call</button>
+                  <button className="button" onClick={handleClick}>Schedule a call</button>
                 </div>
               )}
             </TrackVisibility>
@@ -87,7 +93,9 @@ export const Banner = () => {
                   }
                 >
                   <div className="card1">
-                    <img src={profileimg} alt="Header" />
+                    <LazyLoad>
+                      <img src={headerImg} alt="Header" />
+                    </LazyLoad>
                   </div>
                 </div>
               )}

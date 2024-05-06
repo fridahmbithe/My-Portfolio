@@ -12,22 +12,26 @@ export const Projects = () => {
 
   const projects = [
     {
-      
+      id: 1,
       description: "KEMIS (Kenya Education Management Information System",
       imgUrl: kemis,
+      link: 'http://kemis.education.go.ke',
+
     },
     {
+      id: 2,
       description: "ElimuTrees (Tree Growing and Monitoring Web App)",
       imgUrl: elimutrees,
+      link: 'http://elimutrees.education.go.ke',
     },
-    {
-      description: "Notifications/Message Window",
-      imgUrl: projImg3,
-    },
-    {
-      description: "Automatic Reporting Dashboard CEMASTEA ",
-      imgUrl: projImg4,
-    },
+    // {
+    //   description: "Notifications/Message Window",
+    //   imgUrl: projImg3,
+    // },
+    // {
+    //   description: "Automatic Reporting Dashboard CEMASTEA ",
+    //   imgUrl: projImg4,
+    // },
   ];
 
   return (
@@ -35,12 +39,12 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-            <TrackVisibility>
+            <TrackVisibility >
               {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-                <h2>Projects</h2>
-                <p>Some of the Projects that I have Worked on</p>
-                <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
+                  <h2>Projects</h2>
+                  <p>Some of the Projects that I have Worked on</p>
+                  <Tab.Container id="projects-tabs" defaultActiveKey="first">
                   <Tab.Content id="slideInUp" className={isVisible ? "animate__animated animate__slideInUp" : ""}>
                     <Tab.Pane eventKey="first">
                       <Row>
@@ -59,7 +63,7 @@ export const Projects = () => {
                    
                   </Tab.Content>
                 </Tab.Container>
-              </div>}
+                </div>}
             </TrackVisibility>
           </Col>
         </Row>
