@@ -1,10 +1,12 @@
+import React from "react";
 import "react-multi-carousel/lib/styles.css";
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
+import { Carousel } from "react-responsive-carousel";
 
 export const Skills = () => {
   const responsive = {
     superLargeDesktop: {
-       breakpoint: { max: 4000, min: 3000 },
+      breakpoint: { max: 4000, min: 3000 },
       items: 5,
     },
     desktop: {
@@ -22,13 +24,13 @@ export const Skills = () => {
   };
 
   return (
-    <section className="responsive " id="skills">
+    <section className="responsive" id="skills">
       <div className="row">
         <div className="col-12">
-          <div className="card ">
+          <div className="card">
             <h2>My Skills</h2>
             <p className="align-left">
-              I have Junior level programming experience in react js with tailwind amd MUI for frontend and .net framework for backend development<br/>
+              I have Junior level programming experience in React.js with Tailwind and MUI for frontend and .NET Framework for backend development.
             </p>
           </div>
           <div className="skilllist">
@@ -36,30 +38,31 @@ export const Skills = () => {
               <Col>
                 <div className="list p-2">
                   <h5>Full Stack Web Developer</h5>
-                  <div >
-                  <ul>
-                  <li>HTML</li>
-                  <li>JavaScript</li>
-                  <li>React JS</li>
-                  <li>CSS, Tailwind & MUI</li>
-                  <li> web Apis </li>
-                  <li>C#</li>
-                  </ul>
-                  
+                  <div>
+                    <div class="slider-wrapper axis-horizontal" responsive={responsive} infinite={true}>
+                      <ul>
+                        <li>HTML</li>
+                        <li>JavaScript</li>
+                        <li>React JS</li>
+                        <li>CSS, Tailwind, Bootstrap & MUI</li>
+                        <li>Rest APIs</li>
+                        <li>C#</li>
+                      </ul>
+                    </div>
                   </div>
-                  
                 </div>
               </Col>
               <Col>
                 <div className="list">
                   <h5>UI/UX Design</h5>
-                  <div >
-                  <ul>
-                  <li>Web Design </li>
-                  <li>Video Creation and Editing</li>
-                  <li>Logo Design</li>
-                  </ul>
-                  
+                  <div>
+                    <div class="slider-wrapper axis-horizontal" responsive={responsive} >
+                      <ul>
+                        <li>Web Design</li>
+                        <li>Video Creation and Editing</li>
+                        <li>Logo Design</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </Col>
@@ -67,7 +70,6 @@ export const Skills = () => {
           </div>
         </div>
       </div>
-      
     </section>
   );
 };

@@ -56,6 +56,7 @@ img {
 }
 
 button {
+  margin-bottom: 2px !important;
   border: 0;
   background-color: transparent;
 }
@@ -346,14 +347,15 @@ padding: auto;
   box-shadow: 0 30px 30px -5px rgba(0, 0, 0, 0.2);
 
 }
-.skilllist .list{
+.skilllist .list {
   background-color: #5FB2F8;
   border-radius: 30px;
-  height: 200px;
-  text-align: center;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   color: #fff;
-
+  height: 100%;
 }
 .skilllist .list li{
   text-align: left;
