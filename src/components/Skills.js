@@ -39,7 +39,7 @@ export const Skills = () => {
                 <div className="list p-2">
                   <h5>Full Stack Web Developer</h5>
                   <div>
-                    <div class="slider-wrapper axis-horizontal" responsive={responsive} infinite={true}>
+                    <div className="slider-wrapper axis-horizontal" responsive={responsive} >
                       <ul>
                         <li>HTML</li>
                         <li>JavaScript</li>
@@ -56,7 +56,7 @@ export const Skills = () => {
                 <div className="list">
                   <h5>UI/UX Design</h5>
                   <div>
-                    <div class="slider-wrapper axis-horizontal" responsive={responsive} >
+                    <div className="slider-wrapper axis-horizontal" responsive={responsive} >
                       <ul>
                         <li>Web Design</li>
                         <li>Video Creation and Editing</li>

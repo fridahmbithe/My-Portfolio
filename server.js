@@ -3,11 +3,10 @@ const router = express.Router();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 
-// server used to send send emails
 const app = express();
 app.use(cors());
 app.use(express.json());
-app.use("/", router);
+app.use("/api", router); // Use "/api" as the base URL for the contact endpoint
 app.listen(5000, () => console.log("Server Running"));
 console.log(process.env.EMAIL_USER);
 console.log(process.env.EMAIL_PASS);
@@ -15,8 +14,8 @@ console.log(process.env.EMAIL_PASS);
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "********@gmail.com",
-    pass: ""
+    user: "thefridahmbithe@gmail.com",
+    pass: "qppu oqps awas syaf"
   },
 });
 
@@ -35,7 +34,7 @@ router.post("/contact", (req, res) => {
   const phone = req.body.phone;
   const mail = {
     from: name,
-    to: "********@gmail.com",
+    to: "thefridahmbithe@gmail.com",
     subject: "Contact Form Submission - Portfolio",
     html: `<p>Name: ${name}</p>
            <p>Email: ${email}</p>
@@ -44,9 +43,9 @@ router.post("/contact", (req, res) => {
   };
   contactEmail.sendMail(mail, (error) => {
     if (error) {
-      res.json(error);
+      res.status(500).json({ error: "Failed to send email" });
     } else {
-      res.json({ code: 200, status: "Message Sent" });
+      res.status(200).json({ message: "Email sent successfully" });
     }
   });
 });
