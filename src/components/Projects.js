@@ -22,7 +22,7 @@ export const Projects = () => {
       id: 2,
       description: "ElimuTrees (Tree Growing and Monitoring Web App)",
       imgUrl: elimutrees,
-      link: 'http://elimutrees.education.go.ke',
+      link: 'https://elimutrees.education.go.ke',
     },
     // {
     //   description: "Notifications/Message Window",

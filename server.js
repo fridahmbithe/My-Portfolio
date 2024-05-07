@@ -7,9 +7,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/api", router); // Use "/api" as the base URL for the contact endpoint
-app.listen(5000, () => console.log("Server Running"));
-console.log(process.env.EMAIL_USER);
-console.log(process.env.EMAIL_PASS);
+//app.listen(5000, () => console.log("Server Running"));
+// console.log(process.env.EMAIL_USER);
+// console.log(process.env.EMAIL_PASS);
 
 const contactEmail = nodemailer.createTransport({
   service: 'gmail',
@@ -49,3 +49,4 @@ router.post("/contact", (req, res) => {
     }
   });
 });
+module.exports = app;
