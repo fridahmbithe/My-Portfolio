@@ -3,6 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import contactImg from "../assets/img/contact-img.svg";
 import 'animate.css';
 import TrackVisibility from 'react-on-screen';
+import axios from "axios";
 
 export const Contact = () => {
   const formInitialDetails = {
@@ -50,9 +51,9 @@ export const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setButtonText("Sending...");
-    let response = await fetch("http://localhost:5000/api/contact", {
-      method: "POST",
+    let response = await axios.post("http://localhost:500/api/contact", {
       headers,
+      mode:'no-cors',
       body: JSON.stringify(formDetails),
     });
     setButtonText("Send");
@@ -117,11 +118,14 @@ export const Contact = () => {
     </section>
   )
 }
+
+
 // import { useState } from "react";
 // import { Container, Row, Col } from "react-bootstrap";
 // import contactImg from "../assets/img/contact-img.svg";
 // import 'animate.css';
 // import TrackVisibility from 'react-on-screen';
+// import axios from "axios";
 
 // export const Contact = () => {
 //   const formInitialDetails = {
@@ -130,32 +134,44 @@ export const Contact = () => {
 //     email: '',
 //     phone: '',
 //     message: ''
-//   }
+//   };
 //   const [formDetails, setFormDetails] = useState(formInitialDetails);
 //   const [buttonText, setButtonText] = useState('Send');
-//   const [status, setStatus] = useState({});
+//   const [status, setStatus] = useState("");
+//   const crdusername = "thefridahmbithe@gmail.com";
+//     const crdpassword = "qppu oqps awas syaf";
+//     const credentials = `${crdusername}:${crdpassword}`;
+//     const base64Credentials = btoa(credentials);
+//     const headers = {
+//       Authorization: `Basic ${base64Credentials}`,
+//       "Content-Type": "application/json; charset=utf-8",
+//       "Access-Control-Allow-Methods": "GET, POST",
+//       "Access-Control-Allow-Headers": "X-Token",
+//       "Access-Control-Allow-Credentials": "true",
+//     };
+//   const resetFormFields = () => {
+//     setFormDetails(formInitialDetails);
+//   };
 
 //   const onFormUpdate = (category, value) => {
 //     setFormDetails({
 //       ...formDetails,
 //       [category]: value
-//     })
-//   }
+//     });
+//   };
 
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     setButtonText("Sending...");
 //     try {
-//       const response = await fetch("/api/contact", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json;charset=utf-8",
-//         },
-//         body: JSON.stringify(formDetails),
-//       });
-//       const result = await response.json();
+//       const response = await axios.post("http://localhost:5000/contact", formDetails,{
+//               headers,
+//               mode:'no-cors',
+//               body: JSON.stringify(formDetails),
+//             });
 //       if (response.status === 200) {
 //         setStatus({ success: true, message: 'Message sent successfully' });
+//         resetFormFields();
 //       } else {
 //         setStatus({ success: false, message: 'Something went wrong, please try again later.' });
 //       }
@@ -163,7 +179,6 @@ export const Contact = () => {
 //       setStatus({ success: false, message: 'Something went wrong, please try again later.' });
 //     } finally {
 //       setButtonText("Send");
-//       setFormDetails(formInitialDetails);
 //     }
 //   };
 
@@ -201,7 +216,8 @@ export const Contact = () => {
 //                         <textarea rows="6" value={formDetails.message} placeholder="Message" onChange={(e) => onFormUpdate('message', e.target.value)}></textarea>
 //                         <button type="submit"><span>{buttonText}</span></button>
 //                       </Col>
-//                       {status.message &&
+//                       {
+//                         status.message &&
 //                         <Col>
 //                           <p className={status.success === false ? "danger" : "success"}>{status.message}</p>
 //                         </Col>
