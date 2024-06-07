@@ -15,7 +15,7 @@ export const Projects = () => {
       id: 1,
       description: "KEMIS (Kenya Education Management Information System",
       imgUrl: kemis,
-      link: 'http://kemis.education.go.ke',
+      link: 'https://kemis.education.go.ke',
 
     },
     {
