@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/profile.png";
+import headerImg from "../assets/img/profile.jpeg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import LazyLoad from 'react-lazyload';
 import {PopupButton } from "react-calendly";
-import emailjs from 'emailjs-com';
 
 export const Landing = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -61,28 +60,7 @@ export const Landing = () => {
   };
 
    const [rootElement, setRootElement] = useState(null);
-  // const templateParams = {
-  //   name: 'Fridah Mbithe',
-  //   email: 'user@example.com',
-  //   date: 'June 13, 2024',
-  //   time: '10:00 AM',
-  // };
-  // const handleChange = (event) => {
-  //   setFormData({
-  //     ...formData,
-  //     [event.target.name]: event.target.value,
-  //   });
-  // };
-  // const handleEmailSubmit = (event) => {
-  //   event.preventDefault();
-       
-  //   emailjs.send('service_fjr4n1u', 'template_ls8mayx', templateParams, 'gMFWFJ-J5rRjQKxZC')
-  //     .then((result) => {
-  //       console.log('Email sent successfully!', result.text);
-  //     }, (error) => {
-  //       console.error('Error sending email:', error.text);
-  //     });
-  // };
+  
   const handleScheduleClick = () => {
     setShowCalendlyPopup(true);
   };
@@ -113,7 +91,7 @@ export const Landing = () => {
                   <div className="calendly" ref={setRootElement}>
                     <PopupButton
                       url="https://calendly.com/fridahmbithe45"
-                      text="Schedule a Call"
+                      text="Schedule a Meeting"
                       // color="#00a2ff"
                       // textColor="#ffffff"
                       className="schedule-button"
