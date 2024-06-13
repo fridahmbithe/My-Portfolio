@@ -4,9 +4,10 @@ import headerImg from "../assets/img/profile.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import LazyLoad from 'react-lazyload';
+import {PopupButton } from "react-calendly";
+import emailjs from 'emailjs-com';
 
-
-export const Banner = () => {
+export const Landing = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [text, setText] = useState("");
@@ -15,6 +16,8 @@ export const Banner = () => {
   const toRotate = ["Front-end Web Developer", "Web Designer"];
   const period = 2000;
   const profileimg = headerImg;
+
+
   useEffect(() => {
     let ticker = setInterval(() => {
       tick();
@@ -57,8 +60,36 @@ export const Banner = () => {
     window.location.href = 'tel:+254112579157';
   };
 
+   const [rootElement, setRootElement] = useState(null);
+  // const templateParams = {
+  //   name: 'Fridah Mbithe',
+  //   email: 'user@example.com',
+  //   date: 'June 13, 2024',
+  //   time: '10:00 AM',
+  // };
+  // const handleChange = (event) => {
+  //   setFormData({
+  //     ...formData,
+  //     [event.target.name]: event.target.value,
+  //   });
+  // };
+  // const handleEmailSubmit = (event) => {
+  //   event.preventDefault();
+       
+  //   emailjs.send('service_fjr4n1u', 'template_ls8mayx', templateParams, 'gMFWFJ-J5rRjQKxZC')
+  //     .then((result) => {
+  //       console.log('Email sent successfully!', result.text);
+  //     }, (error) => {
+  //       console.error('Error sending email:', error.text);
+  //     });
+  // };
+  const handleScheduleClick = () => {
+    setShowCalendlyPopup(true);
+  };
+  const [showCalendlyPopup, setShowCalendlyPopup] = useState(false);
+
   return (
-    <section className="banner" id="home">
+    <section className="landing" id="home">
       <Container>
         <Row className="aligh-items-center">
           <Col xs={12} md={6} xl={7}>
@@ -69,16 +100,29 @@ export const Banner = () => {
                     isVisible ? "animate__animated animate__zoomin" : ""
                   }
                 >
+                  
                   <span className="tagline">
-                    Hi, My name is Fridah Mbithe.{" "}
-                  </span>
-                  <h3>{`A Full stack Web Developer `}</h3>
+                  Fridah Mbithe{" "}
+                  </span> <br />
+                  <h5 className="greet">{`Front-end Web Developer `}</h5>
                   <p>
-                    I am a creative and detail oriented full stack web developer with an
+                    A creative and detail oriented front-end web developer with an
                     ability to create intuitive and innovative designs, and
                     also, translate the designs to a fully responsive Website.
                   </p>
-                  <button className="button" onClick={handleClick}>Schedule a call</button>
+                  <div className="calendly" ref={setRootElement}>
+                    <PopupButton
+                      url="https://calendly.com/fridahmbithe45"
+                      text="Schedule a Call"
+                      // color="#00a2ff"
+                      // textColor="#ffffff"
+                      className="schedule-button"
+                      onClick={handleScheduleClick}
+                      rootElement={rootElement}
+                      
+                    />
+                    
+                  </div>
                 </div>
               )}
             </TrackVisibility>
