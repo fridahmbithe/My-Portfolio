@@ -30,8 +30,8 @@ export const Skills = () => {
           <div className="header">
             <h2>Skills</h2>
             <p className="align-left">
-              Junior level programming experience in front-end web development
-            </p>
+            As an experienced front-end web developer, I specialize in building responsive 
+            and user-centered designs that enhance the overall user experience.            </p>
           </div>
           <div className="skilllist">
             <Row>
@@ -66,6 +66,10 @@ export const Skills = () => {
                           <li className="skills-item">
                             <i className="fab fa-csharp skills-icon"></i>
                             <span className="skills-label">C#</span>
+                          </li>
+                          <li className="skills-item">
+                            <i className="fab fa-csharp skills-icon"></i>
+                            <span className="skills-label">AWS</span>
                           </li>
                         </ul>
                       </div>

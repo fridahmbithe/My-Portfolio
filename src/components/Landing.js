@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import headerImg from "../assets/img/profile.jpeg";
+import headerImg from "../assets/img/profile1.jpeg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 import LazyLoad from 'react-lazyload';
@@ -82,18 +82,16 @@ export const Landing = () => {
                   <span className="tagline">
                   Fridah Mbithe{" "}
                   </span> <br />
-                  <h5 className="greet">{`Front-end Web Developer `}</h5>
+                  {/* <h5 className="greet">{`Front-end Web Developer `}</h5> */}
                   <p>
-                    A creative and detail oriented front-end web developer with an
-                    ability to create intuitive and innovative designs, and
-                    also, translate the designs to a fully responsive Website.
+                  Welcome to my Portfolio! I’m a meticulous <span class="text-white text-xl font-bold"> front-end web developer </span> 
+                  with a passion for crafting intuitive and innovative designs. From wireframes to fully responsive websites, I bring creativity and attention to detail to every project.
+                   Explore my work and discover how I turn ideas into seamless digital experiences!
                   </p>
                   <div className="calendly" ref={setRootElement}>
                     <PopupButton
                       url="https://calendly.com/fridahmbithe45"
                       text="Schedule a Meeting"
-                      // color="#00a2ff"
-                      // textColor="#ffffff"
                       className="schedule-button"
                       onClick={handleScheduleClick}
                       rootElement={rootElement}

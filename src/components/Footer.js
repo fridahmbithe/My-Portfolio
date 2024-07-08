@@ -9,7 +9,7 @@ export const Footer = () => {
       <Container>
         <Row className="align-items-center justify-content-between ">
           <Col size={12} sm={6}>
-            <p>Fridah Mbithe Taabu &copy; 2024</p>
+            <p>&copy; 2024 Fridah Mbithe. All rights reserved.</p>
           </Col>
           <Col size={12} sm={6} className="text-center text-sm-end ">
             <div className="social-icon">

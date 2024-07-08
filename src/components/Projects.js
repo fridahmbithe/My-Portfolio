@@ -2,7 +2,7 @@ import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import kemis from "../assets/img/kemis.png";
 import elimutrees from "../assets/img/elimutrees.png";
-import projImg3 from "../assets/img/project1.jpg";
+import projImg3 from "../assets/img/resrise.png";
 import projImg4 from "../assets/img/first work.jpg";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import 'animate.css';
@@ -24,14 +24,13 @@ export const Projects = () => {
       imgUrl: elimutrees,
       link: 'https://elimutrees.education.go.ke',
     },
-    // {
-    //   description: "Notifications/Message Window",
-    //   imgUrl: projImg3,
-    // },
-    // {
-    //   description: "Automatic Reporting Dashboard CEMASTEA ",
-    //   imgUrl: projImg4,
-    // },
+    {
+      description: "Resume Rise (CV Revamp, job advertising website",
+      imgUrl: projImg3,
+      link: 'https://resumeriseltd.vercel.app/',
+
+    },
+    //    
   ];
 
   return (
